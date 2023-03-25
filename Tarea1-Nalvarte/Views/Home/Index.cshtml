@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Calculadora de pagos con monto de mora</h1>
+    <form method="post" asp-action="Pago" asp-controller="Home">
+  <div class="form-group">
+    <label for="numeroTarjeta">Número de tarjeta</label>
+    <input type="text" class="form-control" name="numeroTarjeta" placeholder="Ingrese el número de su tarjeta">
+  </div>
+  <div class="form-group">
+    <label for="fechaVencimiento">Fecha de vencimiento del pago</label>
+    <input type="date" class="form-control" name="fechaVencimiento">
+  </div>
+  <div class="form-group">
+    <label for="montoPagar">Monto a pagar</label>
+    <input type="number" class="form-control" name="montoPagar" placeholder="Ingrese el monto a pagar">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  <br><br>
+</form>
+
+<div class="container">
+  <h2>Resultado del Pago</h2>
+  <p>Número de Tarjeta: @ViewBag.NumeroTarjeta</p>
+  <p>Pago Inicial: @ViewBag.MontoPagar</p>
+  <p>Dias de Mora: @ViewBag.diasAtraso</p>
+  <p>Cobro Mora: @ViewBag.Mora</p>
+  <p>Pago Final: @ViewBag.PagoFinal</p>
+</div>
